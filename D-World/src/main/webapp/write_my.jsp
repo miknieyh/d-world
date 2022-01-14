@@ -28,36 +28,40 @@
 		style="height: 100%; background-color: WhiteSmoke;">
 		<div class="row">
 			<div class="col-8" style="background-color: white;">
-				<c:forEach var="b" items="${bArr}">
-					<table class="table table-sm">
-						<thead class="table-dark">
-							<tr>
-								<td><c:choose>
-										<c:when test="${b.stat == 2}">
-											비밀일기</c:when>
-										<c:otherwise>공유일기</c:otherwise>
-									</c:choose></td>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-							<tr>
-								<td>${b.writer}</td>
-							</tr>
-							<tr>
-								<td>${b.wdate}</td>
-							</tr>
-							<tr>
-								<td><img alt="" src=""></td>
-							</tr>
-							<tr>
-								<td><div style="height: 120px;">${b.contents}</div><br>
-									<button class="btn btn-outline-dark btn-sm">자세히</button>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</c:forEach>
+			<form action="writemy" method="post" enctype="multipart/form-data">
+				<table class="table table-sm">
+					<thead class="table-dark">
+						<tr>
+							<td>비밀일기 작성</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><div class="form-floating">
+									<textarea class="noresize h-25 form-control textdiv"
+										id="floatingTextarea" name="content" rows="20"></textarea>
+									<label for="floatingTextarea">글 내용을 입력해 주세요.</label>
+								</div></td>
+						</tr>
+						<tr>
+							<td><div class="mb-3">
+									<label for="formFileSm" class="form-label">사진 업로드</label> <input
+										class="form-control form-control-sm" id="formFileSm"
+										type="file" name="photo" multiple>
+								</div></td>
+							</td>
+						</tr>
+						<tr><td>
+							<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+								<a href="main"><button class="btn btn-secondary me-md-2" type="button">취소</button></a>
+								<button class="btn btn-dark" type="submit">글쓰기</button>
+							</div>
+							</td>
+						</tr>
+						
+					</tbody>
+				</table></form>
+
 
 
 			</div>
