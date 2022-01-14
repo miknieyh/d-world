@@ -1,0 +1,106 @@
+@charset "UTF-8";
+.body{
+    width: auto;
+    height: auto;
+    margin: auto;
+}
+#event{
+    height: 100px;
+}
+header{
+    height: 180px;
+}
+
+.nav-item a{
+    color: white;
+}
+.nav-item a:hover{
+    color: rgb(0, 177, 103);
+}
+.event{
+    height: 600px;
+}
+.stylestory{
+    height: 100px;
+    font-size: xx-large;
+}
+.main{
+    height: 800px;
+}
+.main2{
+    width: 4    00px;
+}
+.small{
+    font-size:smaller;
+}
+a{
+    text-decoration-line: none;
+    color: black;
+}
+a:hover{
+    color: grey;
+}
+footer p{
+    font-size: smaller;
+}
+.grey{
+    background-color: grey;
+}
+.footnav a:hover{
+    color: white;
+}
+.pa{
+    position: absolute;
+    display: none;
+}
+
+.navh:hover ul{
+    display: block;
+}
+td{
+    height: 50px;
+}
+.th1{
+    background-color: rgb(233, 73, 73);
+    color: white;
+    text-align: center;
+}
+
+.join{
+    width: 1200px;
+}
+.info{
+    color: red;
+}
+.empty{
+    width: 50px;
+}
+.btn-lg{
+    width:200px;
+}
+.empty2{
+    height: 50px;
+}
+.empty3{
+    height: 150px;
+}
+.lb-wrap{
+    position: relative;
+}
+.lb-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.menubox{
+    width: 450px;
+    height: 100px;
+    border: 3px solid;
+}
+.menubox:hover{
+    background-color: black;
+    color: white;
+    border: 3px solid;
+}
