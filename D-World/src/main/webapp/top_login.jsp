@@ -33,7 +33,7 @@
 					<li class="nav-item mt-4"><a class="nav-link fw-bolder"
 						aria-current="page" href="#">새일기</a></li>
 					<ul class="bg-white pa nav flex-column p-4">
-						<li><a href="#">공유일기</a></li>
+						<li><a href="main?flag=write_group">공유일기</a></li>
 						<li><a href="main?flag=write_my">비밀일기</a></li>
 						<li><a href="#">공개일기</a></li>
 					</ul>

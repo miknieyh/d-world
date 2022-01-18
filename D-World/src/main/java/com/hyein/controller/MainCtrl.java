@@ -33,15 +33,14 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 	if(request.getParameter("flag")!=null) {
 		if(request.getParameter("flag").equals("write_my")) {
 			dispatcher= request.getRequestDispatcher("write_my.jsp");
+		}else if(request.getParameter("flag").equals("write_group")) {
+			dispatcher= request.getRequestDispatcher("group_select.jsp");
 		}
 	}else {
-		
 		ArrayList<BoardData> bArr = boardService.mainList(idx);
 		request.setAttribute("bArr", bArr);
-		
 		dispatcher = request.getRequestDispatcher("main.jsp");
 	}
-	
 	dispatcher.forward(request, response);
 }
 }

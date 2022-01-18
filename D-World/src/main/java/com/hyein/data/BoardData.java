@@ -12,12 +12,13 @@ public class BoardData {
 	private boolean mine;
 	private ArrayList<String> photo;
 	
-	public BoardData(int idx, String contents, Timestamp wdate,String writer,int stat) {
+	public BoardData(int idx, String contents, Timestamp wdate,String writer,int stat, ArrayList<String> photo) {
 		this.idx = idx;
 		this.contents= contents;
 		this.wdate=wdate;
 		this.writer = writer;
 		this.stat = stat;
+		this.photo = photo;
 
 	}
 	

@@ -28,40 +28,36 @@
 		style="height: 100%; background-color: WhiteSmoke;">
 		<div class="row">
 			<div class="col-8" style="background-color: white;">
-				<c:forEach var="b" items="${bArr}">
-					<table class="table table-sm">
-						<thead class="table-dark">
+			<div>
+		<h1 class="text-center mt-5 mb-5">SELECT GROUP</h1>
+	</div>
+				<table class="table table-sm">
+						<thead class="table-success">
 							<tr>
-								<td><c:choose>
-										<c:when test="${b.stat == 2}">
-											비밀일기</c:when>
-										<c:otherwise>공유일기</c:otherwise>
-									</c:choose></td>
+								<td class="text-center"></td>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-							<tr>
-								<td>${b.writer}</td>
+								<td>
+									<div class="d-grid gap-2">
+										<button class="btn btn-success" type="button">그룹만들기</button>
+									</div>
+								</td>
 							</tr>
-							<tr>
-								<td>${b.wdate}</td>
-							</tr>
-
-							<c:forEach var="photo" items="${b.photo}">
+						
 								<tr>
-									<td><img alt="photo" src="./upload/${photo}"
-										style="width: 800px;"></td>
+									<td>
+									<div class="d-grid gap-2">
+									<button class="btn btn-outline-success" type="button">그룹선택</button>
+									</div>
+									</td>
 								</tr>
-							</c:forEach>
-							<tr>
-								<td><div style="height: 120px;">${b.contents}</div>
-									<br>
-									<button class="btn btn-outline-dark btn-sm">자세히</button></td>
-							</tr>
+
 						</tbody>
 					</table>
-				</c:forEach>
+
+			<div class="empty3"></div>
 
 
 			</div>

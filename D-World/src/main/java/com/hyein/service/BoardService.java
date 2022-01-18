@@ -47,7 +47,7 @@ public class BoardService {
 			String sql = " SELECT IDX FROM(SELECT * FROM DIARY ORDER BY WDATE DESC )WHERE ROWNUM =1  ";
 			int d_idx = -1;
 			try {
-				Class.forName(driver);
+				Class.forName(driver); 
 				Connection con = DriverManager.getConnection(url,dbID,dbPassWd);
 				Statement st = con.createStatement();
 				ResultSet rs = st.executeQuery(sql);
@@ -109,7 +109,8 @@ public class BoardService {
 				Timestamp wdate = rs.getTimestamp("wdate");
 				String writer = rs.getString("nickname");
 				int stat = rs.getInt("stat");
-				BoardData b = new BoardData(idx, contents, wdate, writer,stat);
+				ArrayList<String> photo = photoList(idx);
+				BoardData b = new BoardData(idx, contents, wdate, writer,stat,photo);
 				bArr.add(b);
 			}
 			
@@ -127,5 +128,31 @@ public class BoardService {
 		return bArr; 
 	}
 	
-	
+	public ArrayList<String> photoList(int d_idx){
+		ArrayList<String> photos = new ArrayList<String>();
+		String sql = "select * from photo where d_idx ="+d_idx;
+		try {
+			Class.forName(driver);
+			Connection con = DriverManager.getConnection(url,dbID,dbPassWd);
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql);
+			while(rs.next()) {
+				
+				String photo = rs.getString("photo");
+				photos.add(photo);
+			}
+			
+		}catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		return photos; 
+	}
 }
