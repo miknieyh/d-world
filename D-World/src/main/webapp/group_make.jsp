@@ -31,11 +31,11 @@
 				<div>
 					<h1 class="text-center mt-5 mb-5">JOIN GROUP</h1>
 				</div>
-				<form action="groupmake" method="post">
+				<form action="groupmake" method="get">
 					<table class="table table-sm">
 						<thead class="table-warning">
 							<tr>
-								<td colspan="2">공유일기 그룹 선택</td>
+								<td colspan="2">공유일기 그룹 만들기</td>
 							</tr>
 						</thead>
 						<tbody>
@@ -65,18 +65,7 @@
 				<div class="empty3"></div>
 
 			</div>
-			<div class="col-4">
-				<div class="d-flex ms-3 " style="height: 150px; width: 100%;">
-					<div class="align-self-center">
-						<img alt="프로필 이미지" src="resources/img/profile.png">
-					</div>
-					<div class="align-self-center ms-3">
-						<small>${m.userid}</small> <br>${m.name}<br> <b>${m.nickname}</b>
-					</div>
-				</div>
-
-
-			</div>
+			<%@ include file="/side.jsp" %>
 		</div>
 	</div>
 	<%@ include file="/footer.jsp"%>

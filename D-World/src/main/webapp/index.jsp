@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/top_logout.jsp"%>	
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +39,11 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td class="col-2 pt-5"></td>
+						<td class="col-2 pt-5">
+						
+						<input type="hidden" value="${param.invite}" name="invite">
+						</td>
+						
 						<td class="ps-5  align-middle">아이디</td>
 						<td><input type="text" name="userid" class="form-control"
 							placeholder="아이디를 입력해주세요." aria-describedby="addon-wrapping"></td>
@@ -55,7 +59,6 @@
 						<td><input type="password" name="passwd" class="form-control"
 							placeholder="영문+숫자+특수문자 조합 8~16자리"
 							aria-describedby="addon-wrapping"></td>
-
 					</tr>
 				</tbody>
 			</table>

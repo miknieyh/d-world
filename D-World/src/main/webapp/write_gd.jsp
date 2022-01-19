@@ -32,13 +32,13 @@
 				<table class="table table-sm">
 					<thead class="table-dark">
 						<tr>
-							<td>비밀일기 작성</td>
+							<td>${param.gname}</td>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td><div class="form-floating">
-							<input type="hidden" value="-1" name="g_idx">
+							<input type="hidden" value="${param.gidx}" name="g_idx">
 									<textarea class="noresize h-25 form-control textdiv"
 										id="floatingTextarea" name="content" rows="20"></textarea>
 									<label for="floatingTextarea">글 내용을 입력해 주세요.</label>

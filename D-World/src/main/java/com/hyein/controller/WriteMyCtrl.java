@@ -63,8 +63,13 @@ public class WriteMyCtrl extends HttpServlet{
 			}
 		}
 		
-		boardService.insertBoard(contents,2,m_idx,-1);
-		
+		int g_idx = Integer.parseInt(request.getParameter("g_idx"));
+		int stat = 2;
+		if (g_idx!=-1) {
+			stat =3;
+		}
+
+		boardService.insertBoard(contents,stat,m_idx,g_idx);
 		int d_idx = boardService.getDiaryIdx();
 		System.out.println(d_idx);
 		boardService.insertPhoto(photo, d_idx);

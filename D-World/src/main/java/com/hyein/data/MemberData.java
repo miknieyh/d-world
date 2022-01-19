@@ -13,7 +13,31 @@ public class MemberData {
 	private Timestamp wdate;
 	private Date birth;
 	private int stat;
+	private String groupname;
+	private int g_idx;
 	
+	
+	public MemberData(int g_idx, String groupname) {
+		this.g_idx=g_idx;
+		this.groupname=groupname;
+	}
+	
+	public String getGroupname() {
+		return groupname;
+	}
+
+	public void setGroupname(String groupname) {
+		this.groupname = groupname;
+	}
+
+	public int getG_idx() {
+		return g_idx;
+	}
+
+	public void setG_idx(int g_idx) {
+		this.g_idx = g_idx;
+	}
+
 	public MemberData (String userid, String name, String nickname) {
 		this.userid=userid;
 		this.name = name;

@@ -65,18 +65,7 @@
 
 
 			</div>
-			<div class="col-4">
-				<div class="d-flex ms-3 " style="height: 150px; width: 100%;">
-					<div class="align-self-center">
-						<img alt="프로필 이미지" src="resources/img/profile.png">
-					</div>
-					<div class="align-self-center ms-3">
-						<small>${m.userid}</small> <br>${m.name}<br> <b>${m.nickname}</b>
-					</div>
-				</div>
-
-
-			</div>
+			<%@ include file="/side.jsp" %>
 		</div>
 	</div>
 	<%@ include file="/footer.jsp"%>

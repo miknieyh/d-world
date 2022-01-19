@@ -28,51 +28,66 @@
 		style="height: 100%; background-color: WhiteSmoke;">
 		<div class="row">
 			<div class="col-8" style="background-color: white;">
-			<div>
-		<h1 class="text-center mt-5 mb-5">SELECT GROUP</h1>
-	</div>
+				<div>
+					<h1 class="text-center mt-5 mb-5">SELECT GROUP</h1>
+				</div>
 				<table class="table table-sm">
-						<thead class="table-success">
+					<thead class="table-success">
+						<tr>
+							<td colspan="2" class="text-center"></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="2">
+								<div>
+									<a href="main?flag=group_make" class="d-grid gap-2"><button
+											class="btn btn-outline-primary" type="button">
+											<b>그룹만들기</b>
+										</button> </a>
+								</div>
+							</td>
+						</tr>
+
+
+						<c:forEach var="g" items="${gArr}" varStatus="i">
 							<tr>
-								<td class="text-center"></td>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									<div class="d-grid gap-2">
-										<button class="btn btn-success" type="button">그룹만들기</button>
+								<td class="w-75">
+									<div>
+										<a
+											href="main?flag=write_gd&gname=${g.groupname}&gidx=${g.g_idx}"
+											class="d-grid gap-2" style="height:75px">
+											<button class="btn btn-outline-success" type="button">${g.groupname}</button>
+										</a>
 									</div>
 								</td>
+								<td><a class="d-grid gap-2"> <input
+										id="myInput_${i.count}"
+										value="http://localhost:8080/D-World/index.jsp?invite=${g.g_idx}">
+										<button class="btn btn-success" onclick="copy_to_clipboard_${i.count}()">초대장
+											링크 복사</button> 
+											<script>
+												function copy_to_clipboard_${i.count}() {
+													var copyText = document
+															.getElementById("myInput_${i.count}");
+													copyText.select();
+													document
+															.execCommand("Copy");
+													console.log('Copied!');
+												}
+											</script>
+								</a></td>
+
 							</tr>
-						
-								<tr>
-									<td>
-									<div class="d-grid gap-2">
-									<button class="btn btn-outline-success" type="button">그룹선택</button>
-									</div>
-									</td>
-								</tr>
+						</c:forEach>
+					</tbody>
+				</table>
 
-						</tbody>
-					</table>
-
-			<div class="empty3"></div>
+				<div class="empty3"></div>
 
 
 			</div>
-			<div class="col-4">
-				<div class="d-flex ms-3 " style="height: 150px; width: 100%;">
-					<div class="align-self-center">
-						<img alt="프로필 이미지" src="resources/img/profile.png">
-					</div>
-					<div class="align-self-center ms-3">
-						<small>${m.userid}</small> <br>${m.name}<br> <b>${m.nickname}</b>
-					</div>
-				</div>
-
-
-			</div>
+			<%@ include file="/side.jsp"%>
 		</div>
 	</div>
 	<%@ include file="/footer.jsp"%>
