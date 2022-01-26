@@ -42,6 +42,8 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		}else if(request.getParameter("flag").equals("write_gd")) {
 			dispatcher= request.getRequestDispatcher("write_gd.jsp");
 			
+		}else if(request.getParameter("flag").equals("cal_my")) {
+			dispatcher = request.getRequestDispatcher("cal_my.jsp");
 		}
 	}else {
 		ArrayList<BoardData> bArr = boardService.mainList(idx);

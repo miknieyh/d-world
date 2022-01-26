@@ -11,15 +11,16 @@ public class BoardData {
 	private String writer; 
 	private boolean mine;
 	private ArrayList<String> photo;
+	private String groupname;
 	
-	public BoardData(int idx, String contents, Timestamp wdate,String writer,int stat, ArrayList<String> photo) {
+	public BoardData(int idx, String contents, Timestamp wdate,String writer,int stat, ArrayList<String> photo ,String groupname) {
 		this.idx = idx;
 		this.contents= contents;
 		this.wdate=wdate;
 		this.writer = writer;
 		this.stat = stat;
 		this.photo = photo;
-
+		this.groupname= groupname;
 	}
 	
 	public BoardData(int idx, String contents, Timestamp wdate, int stat, String writer, boolean mine,
@@ -31,6 +32,7 @@ public class BoardData {
 		this.writer = writer;
 		this.mine = mine;
 		this.photo = photo;
+		
 	}
 	
 	
@@ -75,6 +77,14 @@ public class BoardData {
 	}
 	public void setPhoto(ArrayList<String> photo) {
 		this.photo = photo;
+	}
+
+	public String getGroupname() {
+		return groupname;
+	}
+
+	public void setGroupname(String groupname) {
+		this.groupname = groupname;
 	}
 	
 	

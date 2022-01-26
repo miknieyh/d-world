@@ -22,50 +22,39 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 	crossorigin="anonymous"></script>
+<link href='resources/fullcalendar-5.10.1/lib/main.css' rel='stylesheet' />
+<script src='resources/fullcalendar-5.10.1/lib/main.js'></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth'
+    });
+    calendar.render();
+  });
+</script>
 </head>
 <body>
 	<div class="container"
 		style="height: 100%; background-color: WhiteSmoke;">
 		<div class="row">
 			<div class="col-8" style="background-color: white;">
-				<c:forEach var="b" items="${bArr}">
-					<table class="table table-sm">
-						<thead class="table-dark">
-							<tr>
-								<td><c:choose>
-										<c:when test="${b.stat == 2}">
-											비밀일기</c:when>
-										<c:otherwise>공유일기 [${b.groupname}]</c:otherwise>
-									</c:choose></td>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-							<tr>
-								<td>${b.writer}</td>
-							</tr>
-							<tr>
-								<td>${b.wdate}</td>
-							</tr>
+				<div class="col-12" id='calendar'></div>
 
-							<c:forEach var="photo" items="${b.photo}">
-								<tr>
-									<td><img alt="photo" src="./upload/${photo}"
-										style="width: 800px;"></td>
-								</tr>
-							</c:forEach>
-							<tr>
-								<td><div style="height: 120px;">${b.contents}</div>
-									<br>
-									<button class="btn btn-outline-dark btn-sm">자세히</button></td>
-							</tr>
-						</tbody>
-					</table>
-				</c:forEach>
+			</div>
+
+			<div class="col-4">
+				<div class="d-flex ms-3 " style="height: 150px; width: 100%;">
+					<div class="align-self-center">
+						<img alt="프로필 이미지" src="resources/img/profile.png">
+					</div>
+					<div class="align-self-center ms-3">
+						<small>${m.userid}</small> <br>${m.name}<br> <b>${m.nickname}</b>
+					</div>
+				</div>
 
 
 			</div>
-			<%@ include file="/side.jsp" %>
 		</div>
 	</div>
 	<%@ include file="/footer.jsp"%>

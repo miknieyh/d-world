@@ -18,7 +18,7 @@
 
 			<div class="d-flex">
 				<div class="mt-5">
-					<a href="join.jsp"><button type="button" class="btn btn-dark">내정보</button></a>
+					<a href="mypage.jsp"><button type="button" class="btn btn-dark">내정보</button></a>
 					<a href="index.jsp"><button type="button" class="btn btn-dark">로그아웃</button></a>
 				</div>
 
@@ -48,7 +48,7 @@
 						aria-current="page" href="#">내 책장</a></li>
 					<ul class="bg-white pa nav flex-column p-4">
 						<li><a href="#">공유일기</a></li>
-						<li><a href="#">비밀일기</a></li>
+						<li><a href="main?flag=cal_my">비밀일기</a></li>
 						<li><a href="#">모아보기</a></li>
 					</ul>
 				</div>

@@ -95,9 +95,7 @@ public class BoardService {
 	public ArrayList<BoardData> mainList(int m_idx) {
 
 		ArrayList<BoardData> bArr = new ArrayList<BoardData>();
-		String sql = "select * from diary d left join (select idx, nickname from member) m "
-				+ "on m.idx = d.m_idx  where g_idx in(select g_idx from groups_member where m_idx= "
-				+ m_idx + ") or m_idx = " + m_idx + " order by wdate desc";
+		String sql = "select * from mainview where viewmemberidx = "+m_idx;
 
 		try {
 			Class.forName(driver);
@@ -108,10 +106,11 @@ public class BoardService {
 				int idx = rs.getInt("idx");
 				String contents = rs.getString("contents");
 				Timestamp wdate = rs.getTimestamp("wdate");
-				String writer = rs.getString("nickname");
+				String writer = rs.getString("writer");
 				int stat = rs.getInt("stat");
+				String groupname = rs.getString("groupname");
 				ArrayList<String> photo = photoList(idx);
-				BoardData b = new BoardData(idx, contents, wdate, writer, stat, photo);
+				BoardData b = new BoardData(idx, contents, wdate, writer, stat, photo,groupname);
 				bArr.add(b);
 			}
 
